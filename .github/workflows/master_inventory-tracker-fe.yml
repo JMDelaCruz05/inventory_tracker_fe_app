@@ -64,4 +64,4 @@ jobs:
           app-name: 'inventory-tracker-fe'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E147CD103D064B67ADA77F7B7A4295A1 }}
-          package: .
+          package: release.zip
