@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import AppRouter from './components/shared/AppRouter/AppRouter'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { Provider } from 'react-redux';
+import store from './common/redux/store';
+
+const custTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#8c9eff',
+      light: 'primary',
+    },
+    secondary: {
+      main: '#448aff',
+    },
+    warning: {
+      main: '#ffffff',
+    },
+    text: {
+      primary: '#000000',
+      secondary: 'rgba(26,26,26,0.54)',
+      disabled: 'rgba(47,47,47,0.38)',
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Provider store={store}>
+      <ThemeProvider theme={custTheme}>
+        <CssBaseline />
+          <AppRouter />
+      </ThemeProvider>
+    </Provider>
+  )
 }
 
 export default App;
