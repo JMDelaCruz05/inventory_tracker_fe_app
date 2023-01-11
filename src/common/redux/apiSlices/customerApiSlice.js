@@ -1,7 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-console.log("ENV: ", process.env)
-
 export const customerApiSlice = createApi({
     reducerPath: 'customerApiSlice',
     baseQuery: fetchBaseQuery({
